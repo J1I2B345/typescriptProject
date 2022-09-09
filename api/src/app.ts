@@ -11,11 +11,13 @@ const app: Application = express();
 app.use(express.urlencoded({ extended: true, limit: "50mb" })); //middleware
 //parsea el body a JSON
 app.use(express.json({ limit: "50mb" }));
+//parsea las cookies que vienen en el body?
 app.use(cookieParser());
 app.use(morgan("dev"));
 
 app.use(
 	cors({
+		//desde donde se van a hacer las peticiones
 		origin: config.cors,
 		credentials: true,
 		methods: ["GET", "PUT", "OPTIONS", "POST", "DELETE"],

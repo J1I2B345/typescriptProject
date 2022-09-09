@@ -10,10 +10,12 @@ import { Col } from "sequelize/types/utils";
 //decorador
 @Table
 export class User extends Model<User> {
+	//dentro del parentesis van las propiedades como las de sequelize
 	@Column({
 		allowNull: false,
 		unique: "compositeIndex",
 	})
+	//fuera va el nombre y el tipo de dato
 	name!: string;
 	@Column({
 		allowNull: false,
