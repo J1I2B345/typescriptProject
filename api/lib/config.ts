@@ -9,7 +9,7 @@ const config = {
 	dbPort: process.env.DB_PORT || "5432",
 	port: process.env.PORT || 3001,
 	host: process.env.HOST || "localhost",
-	cors: process.env.CORS || "localhost:3000",
+	cors: process.env.CORS || "http://localhost:3000",
 };
 
 export default config;

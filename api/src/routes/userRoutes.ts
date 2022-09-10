@@ -1,5 +1,4 @@
 import { Router, Request, Response, NextFunction } from "express";
-import { nextTick } from "process";
 import { User } from "../models/User";
 
 const router = Router();
@@ -10,7 +9,7 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
 		if (users.length) {
 			return res.json(users);
 		}
-		return res.status(404).send("No users");
+		return res.status(200).send("No users");
 	} catch (e) {
 		next(e);
 	}
