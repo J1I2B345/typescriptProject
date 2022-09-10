@@ -6,10 +6,7 @@ const router = Router();
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
 	try {
 		let users: User[] = await User.findAll();
-		if (users.length) {
-			return res.json(users);
-		}
-		return res.status(200).send("No users");
+		return res.json(users);
 	} catch (e) {
 		next(e);
 	}
